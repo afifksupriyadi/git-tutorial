@@ -337,3 +337,4 @@ int main()
 }
 
 // add new comment
+// add new function
