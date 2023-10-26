@@ -333,6 +333,52 @@ int main()
     cout << "Playlist setelah diremove: " << endl;
     show_1301223161(L);
 
+    // Concat List
+    cout << "===== Concat List =====" << endl;
+    List L1, L2, List3;
+    createList_1301223161(L1);
+    createList_1301223161(L2);
+    // Input List 1
+    cout << "----Input List 1 (insert first)----" << endl;
+    cout << "Masukkan berapa banyak data: ";
+    cin >> jmlLagu;
+    for (int i = 0; i < jmlLagu; i++)
+    {
+        cin >> laguFavorit.lagu;
+        cin >> laguFavorit.band;
+
+        p = createNewElmt_1301223161(laguFavorit);
+        insertFirst_1301223161(L1, p);
+    }
+    cout << endl;
+    cout << "SHOW PLAYLIST 1 (insert first): " << endl;
+    show_1301223161(L1);
+
+    // Input List 2
+    cout << "----Input List 2  (insert last)----" << endl;
+    cout << "Masukkan berapa banyak data: ";
+    cin >> jmlLagu;
+    for (int i = 0; i < jmlLagu; i++)
+    {
+        cin >> laguFavorit.lagu;
+        cin >> laguFavorit.band;
+
+        p = createNewElmt_1301223161(laguFavorit);
+        insertFirst_1301223161(L2, p);
+    }
+    cout << endl;
+    cout << "SHOW PLAYLIST 2 (insert last): " << endl;
+    show_1301223161(L2);
+
+    // concat
+    cout << "----Gabung L1 & L2----" << endl;
+    List3 = concat_1301223161(L1, L2);
+    cout << "PLAYLIST 3: " << endl;
+    show_1301223161(List3);
+
+    cout << "Elemen pertama List3: " << info(first(List3)).lagu << " " << info(first(List3)).band << endl;
+    cout << "Elemen terakhir List3: " << info(last(List3)).lagu << " " << info(last(List3)).band << endl;
+
     return 0;
 }
 
